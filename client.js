@@ -29,7 +29,7 @@ Object.prototype.plus = function(vec)
 
 // Константы
 const MAIN_TIMER_INTERVAL = 1, // Интервал генерации паркура
-    STRUCT_PER_SECOND = 1;     // Количество генерируемых структур в секунду
+    STRUCT_PER_SECOND = 5;     // Количество генерируемых структур в секунду
 
 // Функции и объекты
 // Трехмерный вектор - точка в пространстве 
@@ -69,7 +69,23 @@ const structure = function (pos, id) {
 }
 
 const structures = [
-    new structure([new Vector3(0, 0, 0), new Vector3(4, 0, 0)], [38, 38])
+    new structure([new Vector3(0, 0, 0), new Vector3(4, 0, 0)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 0, 1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 0, -1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 0, 2)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 0, -2)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 0, 3)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 0, -3)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 2, -1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(2, 2, 1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(1, 0, 3)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(1, 0, -3)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 1, 2)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 1, -2)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(5, -2, 0)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 2, 0)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 2, -1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 2, -2)], [38, 38]),
 ];
 
 // Переменные
@@ -77,7 +93,7 @@ let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с к
     main_timer = Timers.GetContext().Get("main");       // Основной таймер генерации паркура
  
 // Настройки
-last_pos.Value = [5, 0, 0];
+last_pos.Value = [4, 0, 0];
 
 // Создание команд
 Teams.Add("players", "<i><B><size=38>И</size><size=30>гроки</size></B>\nEternal Parcour by just_qstn</i>", hex_color("#9370DB"));
