@@ -74,7 +74,7 @@ let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с к
 // Настройки
 e = AreaService.Get("start").Ranges.GetEnumerator();
 e.moveNext();
-last_pos.Value = e.Current.to_array(); // Задаем стартовую позицию
+last_pos.Value = [e.Current.x, e.Current.y, e.Current.z]; // Задаем стартовую позицию
 delete e;
 
 // Создание команд
