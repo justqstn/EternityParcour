@@ -52,6 +52,7 @@ const hex_color = function (hex) {
 // Создание структуры из блоков
 const generate_struct = function(struct)
 {
+    msg.Show(true);
     try {
         struct.pos.forEach(function(elem, index)
     {
