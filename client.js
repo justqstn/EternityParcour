@@ -52,12 +52,11 @@ const hex_color = function (hex) {
 // Создание структуры из блоков
 const generate_struct = function(struct)
 {
-    msg.Show(true);
     try {
         struct.pos.forEach(function(elem, index)
     {
         try {
-            MapEditor.SetBlock(new Vector3(0, 0, 0).plus(elem), struct.id[index]); 
+            MapEditor.SetBlock(elem, struct.id[index]); 
         } catch(e) { msg.Show(e.name + " " + e.message);}
     });
     } catch(e) { msg.Show(e.name + " " + e.message);}
