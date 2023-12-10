@@ -6,26 +6,6 @@ try {
 
 
 
-// Примитивы
-// Превращает объект (вектор3) в массив
-Object.prototype.to_array = function()
-{
-    return [this.x, this.y, this.z]; 
-}
-
-// Превращает массив (вектор3) в объект
-Array.prototype.to_object = function()
-{
-    return {x: this[0], y: this[1], z: this[2]};
-}
-
-// Операция сложения
-Object.prototype.plus = function(vec)
-{
-    this.x += vec.x; 
-    this.y += vec.y; 
-    this.z += vec.z; 
-}
 
 // Константы
 const MAIN_TIMER_INTERVAL = 1, // Интервал генерации паркура
@@ -97,6 +77,12 @@ let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с к
  
 // Настройки
 last_pos.Value = [4, 0, 0];
+inv = Inventory.GetContext();
+inv.Main.Value = false;
+inv.Secondary.Value = false;
+inv.Melee.Value = false;
+inv.Explosive.Value = false;
+inv.Build.Value = false;
 
 // Создание команд
 Teams.Add("players", "<i><B><size=38>И</size><size=30>гроки</size></B>\nEternal Parcour by just_qstn</i>", hex_color("#9370DB"));
