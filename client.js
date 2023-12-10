@@ -55,7 +55,7 @@ const generate_struct = function(struct)
 {
     struct.pos.forEach(function(elem, index)
     {
-        MapEditor.SetBlock(elem.x, elem.y, elem.z, struct.id[index]); 
+        MapEditor.SetBlock(lastpos.Value[0] += elem.x, lastpos.Value[1] += elem.y, lastpos.Value[2] += elem.z, struct.id[index]); 
     });
 }
 
@@ -76,7 +76,7 @@ let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с к
     main_timer = Timers.GetContext().Get("main");       // Основной таймер генерации паркура
  
 // Настройки
-
+last_pos.Value = [5, 0, 0];
 
 // Создание команд
 Teams.Add("players", "<i><B><size=38>И</size><size=30>гроки</size></B>\nEternal Parcour by just_qstn</i>", hex_color("#9370DB"));
@@ -117,7 +117,6 @@ Teams.OnPlayerChangeTeam.Add(function(p) {
 
 // Таймеры
 main_timer.OnTimer.Add(function() {
-    /*
     if (STRUCT_PER_SECOND > 1)
     {
         for (let i = 0; i < STRUCT_PER_SECOND; i++)
@@ -129,8 +128,6 @@ main_timer.OnTimer.Add(function() {
     {
         generate_struct(structures[Math.floor(Math.random() * (structures.length - 1))]);
     }
-    */
-   generate_struct(structures[0]);
 });
 
 main_timer.RestartLoop(MAIN_TIMER_INTERVAL);
