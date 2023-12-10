@@ -55,7 +55,7 @@ const generate_struct = function(struct)
 {
     struct.pos.forEach(function(elem, index)
     {
-        MapEditor.SetBlock(lastpos.Value[0] += elem.x, lastpos.Value[1] += elem.y, lastpos.Value[2] += elem.z, struct.id[index]); 
+        MapEditor.SetBlock(last_pos.Value[0] += elem.x, last_pos.Value[1] += elem.y, last_pos.Value[2] += elem.z, struct.id[index]); 
     });
 }
 
