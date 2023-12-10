@@ -120,6 +120,7 @@ Teams.OnPlayerChangeTeam.Add(function(p) {
 
 // Таймеры
 main_timer.OnTimer.Add(function() {
+    /*
     if (STRUCT_PER_SECOND > 1)
     {
         for (let i = 0; i < STRUCT_PER_SECOND; i++)
@@ -131,6 +132,8 @@ main_timer.OnTimer.Add(function() {
     {
         generate_struct(structures[Math.floor(Math.random() * (structures.length - 1))]);
     }
+    */
+   generate_struct(structures[0]);
 });
 
 main_timer.RestartLoop(MAIN_TIMER_INTERVAL);
