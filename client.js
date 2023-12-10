@@ -76,10 +76,7 @@ let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с к
     main_timer = Timers.GetContext().Get("main");       // Основной таймер генерации паркура
  
 // Настройки
-e = AreaService.Get("start").Ranges.GetEnumerator();
-e.moveNext();
-last_pos.Value = [e.Current.x, e.Current.y, e.Current.z]; // Задаем стартовую позицию
-delete e;
+
 
 // Создание команд
 Teams.Add("players", "<i><B><size=38>И</size><size=30>гроки</size></B>\nEternal Parcour by just_qstn</i>", hex_color("#9370DB"));
