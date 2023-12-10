@@ -29,7 +29,7 @@ Object.prototype.plus = function(vec)
 
 // Константы
 const MAIN_TIMER_INTERVAL = 1, // Интервал генерации паркура
-    STRUCT_PER_SECOND = 5;     // Количество генерируемых структур в секунду
+    STRUCT_PER_SECOND = 1;     // Количество генерируемых структур в секунду
 
 // Функции и объекты
 // Трехмерный вектор - точка в пространстве 
@@ -37,6 +37,7 @@ const Vector3 = function(x, y, z) {
     this.x = x || 0;
     this.y = y || 0;
     this.z = z || 0;
+    return this;
 }
 
 // Перевод цвета из HEX строки в цвет в игре
@@ -67,6 +68,7 @@ const generate_struct = function(struct)
 const structure = function (pos, id) {    
     this.pos = pos;   // Позиции (трехмерные вектора). Массив
     this.id = id;     // Айди блока.
+    return this;
 }
 
 const structures = [
