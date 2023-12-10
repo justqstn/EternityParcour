@@ -31,15 +31,6 @@ Object.prototype.plus = function(vec)
 const MAIN_TIMER_INTERVAL = 5, // Интервал генерации паркура
     STRUCT_PER_SECOND = 5;     // Количество генерируемых структур в секунду
 
-// Константы - структуры
-// Структура
-const structure = function (pos, id) {    
-    this.pos = pos;   // Позиции (трехмерные вектора). Массив
-    this.id = id;     // Айди блока.
-}
-
-const structures = [];
-
 // Функции и объекты
 // Трехмерный вектор - точка в пространстве 
 const Vector3 = function(x, y, z) {
@@ -66,6 +57,17 @@ const generate_struct = function(struct)
         MapEditor.SetBlock(last_pos.Value.to_object().plus(elem), struct.blocks.id[index]); 
     });
 }
+
+// Константы - структуры
+// Структура
+const structure = function (pos, id) {    
+    this.pos = pos;   // Позиции (трехмерные вектора). Массив
+    this.id = id;     // Айди блока.
+}
+
+const structures = [
+    new structure([new Vector3(0, 0, 0), new Vector3(4, 0, 0)], [38, 38])
+];
 
 // Переменные
 let last_pos = Properties.GetContext().Get("last_pos"), // Позиция, с которой нужно начинать генерацию новой структуры
@@ -128,4 +130,6 @@ main_timer.OnTimer.Add(function() {
         structures[Math.floor(Math.random() * (structures.length - 1))].generate_struct();
     }
 });
+
+main_timer.Restart(MAIN_TIMER_INTERVAL);
 } catch(e) { Validate.ReportInvalid(e.name + " " + e.message);}
