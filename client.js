@@ -122,14 +122,14 @@ main_timer.OnTimer.Add(function() {
     {
         for (let i = 0; i < STRUCT_PER_SECOND; i++)
         {
-            structures[Math.floor(Math.random() * (structures.length - 1))].generate_struct();
+            generate_struct(structures[Math.floor(Math.random() * (structures.length - 1))]);
         }
     }
     else
     {
-        structures[Math.floor(Math.random() * (structures.length - 1))].generate_struct();
+        generate_struct(structures[Math.floor(Math.random() * (structures.length - 1))]);
     }
 });
 
-main_timer.Restart(MAIN_TIMER_INTERVAL);
+main_timer.RestartLoop(MAIN_TIMER_INTERVAL);
 } catch(e) { Validate.ReportInvalid(e.name + " " + e.message);}
