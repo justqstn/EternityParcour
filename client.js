@@ -70,6 +70,7 @@ const structure = function (pos, id) {
 
 const structures = [
     new structure([new Vector3(0, 0, 0), new Vector3(4, 0, 0)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(4, 1, 0)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(3, 0, 1)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(3, 0, -1)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(2, 0, 2)], [38, 38]),
@@ -85,7 +86,9 @@ const structures = [
     new structure([new Vector3(0, 0, 0), new Vector3(5, -2, 0)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(3, 2, 0)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(3, 2, -1)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 2, 1)], [38, 38]),
     new structure([new Vector3(0, 0, 0), new Vector3(3, 2, -2)], [38, 38]),
+    new structure([new Vector3(0, 0, 0), new Vector3(3, 2, 2)], [38, 38]),
 ];
 
 // Переменные
