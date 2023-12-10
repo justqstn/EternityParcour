@@ -52,10 +52,12 @@ const hex_color = function (hex) {
 // Создание структуры из блоков
 const generate_struct = function(struct)
 {
-    struct.blocks.pos.forEach(function(elem, index)
+    try {
+        struct.pos.forEach(function(elem, index)
     {
-        MapEditor.SetBlock(last_pos.Value.to_object().plus(elem), struct.blocks.id[index]); 
+        MapEditor.SetBlock(last_pos.Value.to_object().plus(elem), struct.id[index]); 
     });
+    } catch(e) { msg.Show(e.name + " " + e.message);}
 }
 
 // Константы - структуры
