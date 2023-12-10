@@ -28,7 +28,7 @@ Object.prototype.plus = function(vec)
 }
 
 // Константы
-const MAIN_TIMER_INTERVAL = 5, // Интервал генерации паркура
+const MAIN_TIMER_INTERVAL = 1, // Интервал генерации паркура
     STRUCT_PER_SECOND = 5;     // Количество генерируемых структур в секунду
 
 // Функции и объекты
@@ -55,7 +55,9 @@ const generate_struct = function(struct)
     try {
         struct.pos.forEach(function(elem, index)
     {
-        MapEditor.SetBlock(last_pos.Value.to_object().plus(elem), struct.id[index]); 
+        try {
+            MapEditor.SetBlock(new Vector3(0, 0, 0).plus(elem), struct.id[index]); 
+        } catch(e) { msg.Show(e.name + " " + e.message);}
     });
     } catch(e) { msg.Show(e.name + " " + e.message);}
 }
