@@ -1,5 +1,5 @@
 {
-	"Name": "тест", 
-	"Description": "тест",
+	"Name": "генератор паркура", 
+	"Description": "простой генератор паркура",
 	"StartClientVersion": 339
 }
